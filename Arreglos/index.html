@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pruebas de arreglos con JS</title>
+</head>
+<body>
+  <script>
+    console.log("Inicio");
+    let arrUsuarios = [
+      {id:1, usuario:"María Fernanda VALENCIA LEOZ", edad:53},
+      {id:2, usuario:"Carlos Alberto SIVORI", edad:54},
+      {id:3, usuario:"Juan Ignacio SIVORI", edad:24},
+      {id:4, usuario:"María Sol SIVORI", edad:21}
+    ];
+    console.log(arrUsuarios);
+    console.log(arrUsuarios[1]);
+    console.log(arrUsuarios[1].usuario, arrUsuarios[1].edad);
+
+    console.log("Le sumo 1 a la edad de todos");
+    arrUsuarios.forEach((usr) => {usr.edad += 1});
+    console.log(arrUsuarios);
+    console.log(arrUsuarios[1]);
+    console.log(arrUsuarios[1].usuario, arrUsuarios[1].edad);
+
+    console.log("Le resto 1 solo a la edad de Carlos");
+    arrUsuarios.forEach((usr) => {(usr.id == 2) ? usr.edad -= 1 : usr});
+    console.log(arrUsuarios);
+    console.log(arrUsuarios[1]);
+    console.log(arrUsuarios[1].usuario, arrUsuarios[1].edad);
+
+    let edades = 0;
+    arrUsuarios.forEach((usr)=>{edades+=usr.edad});
+    console.log("La edad Promedio usando forEach() es: ", edades/arrUsuarios.length);
+
+    console.log("La edad Promedio usando reduce() es: ", arrUsuarios.reduce((u, usr)=>u+usr.edad, 0)/arrUsuarios.length);
+
+    console.log("El 1º SIVORI con find() es: ", arrUsuarios.find((u)=>{return u.usuario.includes("SIVORI")}));
+
+    console.log("Los usuarios SIVORI con filter() son: ", arrUsuarios.filter((u)=>{return u.usuario.includes("SIVORI")}));
+
+    let u1 = arrUsuarios.map((usr) => {usr.edad += 1});
+    let u3 = arrUsuarios.filter();
+    
+  </script>
+</body>
+</html>

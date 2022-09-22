@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #aca {
+        /* background-color: aquamarine;
+        border: 2px dashed black; */
+        margin: auto;
+        padding: 20px;
+        width: 50vw;
+        height: 50vh;
+        overflow: auto;
+      }
+    </style>
+    <script src="./js/carouselAPedalConOOP.js"></script>
+  </head>
+  <body>
+    <h1>Debajo entre las líneas debería ir el Carousel</h1>
+    <hr>
+    <div id="aca"></div>
+    <script>
+      car.setTagId("#aca");
+      car.setBtnPrevProx("30%", "transparent", "rgba(0,0,0,0.2)");
+      car.agregarImagen("img1.jpg");
+      car.agregarImagen("img2.jpg");
+      car.agregarImagen("img3.jpg");
+      car.agregarImagen("img4.jpg");
+      car.mostrar();
+      car.arrancar();
+    </script>
+    <hr>
+  </body>
+</html>
